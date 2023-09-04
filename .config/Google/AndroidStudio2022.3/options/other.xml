@@ -2,12 +2,14 @@
   <component name="PropertyService"><![CDATA[{
   "keyToString": {
     "NonModalCommitCustomization.IsApplied": "true",
+    "android.sdk.path": "/home/ayga/Android/Sdk",
     "ask.about.ctrl.y.shortcut.v2": "true",
     "bundled.plugins.list.saved.version": "AI-223.8836.35.2231.10671973",
     "fileTypeChangedCounter": "1",
     "fontSizeToResetConsole": "13.0",
     "fontSizeToResetEditor": "13.0",
     "input.method.disabler.muted": "true",
+    "newly.installed.api.level": "30",
     "previousColorScheme": "_@user_Darcula",
     "tasks.pass.word.conversion.enforced": "true"
   },

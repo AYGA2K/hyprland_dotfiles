@@ -4,10 +4,15 @@
     <location key="WELCOME_SCREEN.0.0.1920.1080" x="959" y="513" />
   </component>
   <component name="WindowStateApplicationService">
-    <state x="959" y="558" width="1902" height="1026" key="WELCOME_SCREEN" timestamp="1693785381017">
+    <state x="969" y="567" width="1902" height="1026" key="WELCOME_SCREEN" timestamp="1693866675268">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="384" y="446" width="754" height="821" key="WELCOME_SCREEN/0.0.1536.864" timestamp="1693769882784" />
-    <state x="959" y="558" width="1902" height="1026" key="WELCOME_SCREEN/0.0.1920.1080" timestamp="1693785381017" />
+    <state x="959" y="558" width="1902" height="1026" key="WELCOME_SCREEN/0.0.1920.1080" timestamp="1693860592340" />
+    <state x="969" y="567" width="1902" height="1026" key="WELCOME_SCREEN/0.0.1920.1080/1920.0.1366.768" timestamp="1693866675268" />
+    <state x="8" y="45" width="1902" height="1026" key="com.android.tools.idea.devicemanager.DeviceManagerWelcomeScreenFrame" timestamp="1693867144601">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="8" y="45" width="1902" height="1026" key="com.android.tools.idea.devicemanager.DeviceManagerWelcomeScreenFrame/0.0.1920.1080" timestamp="1693867144601" />
   </component>
 </application>

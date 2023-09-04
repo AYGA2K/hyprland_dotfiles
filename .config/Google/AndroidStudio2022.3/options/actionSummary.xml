@@ -1,7 +1,13 @@
 <application>
   <component name="ActionsLocalSummary">
+    <e n="EditorCopy">
+      <i c="4" l="1693844847505" />
+    </e>
     <e n="WelcomeScreen.RunAndroidSdkManager">
-      <i c="1" l="1693785358901" />
+      <i c="5" l="1693859973553" />
+    </e>
+    <e n="WelcomeScreen.RunDeviceManager">
+      <i c="10" l="1693860255652" />
     </e>
   </component>
 </application>

@@ -6,6 +6,7 @@ aic94xx-firmware
 alacritty
 alsa-firmware
 alsa-utils
+android-studio
 arandr
 arc-gtk-theme
 arch-install-scripts
@@ -146,6 +147,7 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
+npm
 ntfs-3g
 ntp
 numlockx
@@ -241,7 +243,6 @@ vim
 volumeicon
 vpnc
 waybar-hyprland-git
-waydroid
 wd719x-firmware
 wezterm
 wget
