@@ -6,7 +6,6 @@ aic94xx-firmware
 alacritty
 alsa-firmware
 alsa-utils
-android-studio
 arandr
 arc-gtk-theme
 arch-install-scripts
@@ -67,6 +66,7 @@ exfatprogs
 expac
 f2fs-tools
 fatresize
+fd
 firefox
 flatpak
 fsarchiver
@@ -93,6 +93,7 @@ irssi
 jfsutils
 ksuperkey
 laptop-detect
+lazygit
 less
 libfido2
 libpwquality

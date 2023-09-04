@@ -35,15 +35,13 @@ map("n", "DD", '"_dd', { desc = "Delete line" })
 -- scroll
 --map("n", "<C-Up>", "<ScrollWheelUp>", { desc = "Scroll top" })
 --map("n", "<C-Down>", "<ScrollWheelDown>", { desc = "Scroll top" })
-map("n", "vv", "<C-v>", { desc = "V-Block" })
-map("n", "vvv", "<S-v>", { desc = "V-Line" })
 -- exit esc or C-[
 map("i", "<S-x>", "<Esc>", { desc = "esc" })
 -- buffers
--- if Util.has("bufferline.nvim") then
---   map("n", "<C-S-Left>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
---   map("n", "<C-S-Right>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
--- else
---   map("n", "<C-S-Left>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
---   map("n", "<C-S-Right>", "<cmd>bnext<cr>", { desc = "Next buffer" })
--- end
+if Util.has("bufferline.nvim") then
+  map("n", "<C-S-Left>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+  map("n", "<C-S-Right>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+else
+  map("n", "<C-S-Left>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+  map("n", "<C-S-Right>", "<cmd>bnext<cr>", { desc = "Next buffer" })
+end
