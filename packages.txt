@@ -205,7 +205,7 @@ squashfs-tools
 sudo
 surfn-icons-git
 swaybg
-swaylock
+swaylock-effects-git
 syslinux
 tcpdump
 terminus-font
