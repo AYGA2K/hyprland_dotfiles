@@ -1,77 +1,34 @@
-#  ╔═╗╔═╗╦ ╦╦═╗╔═╗  ╔═╗╔═╗╔╗╔╔═╗╦╔═╗	- z0mbi3
-#  ╔═╝╚═╗╠═╣╠╦╝║    ║  ║ ║║║║╠╣ ║║ ╦	- https://github.com/gh0stzk/dotfiles
-#  ╚═╝╚═╝╩ ╩╩╚═╚═╝  ╚═╝╚═╝╝╚╝╚  ╩╚═╝	- My zsh conf
+export ZSH=$HOME/.oh-my-zsh
 
-#  ┬  ┬┌─┐┬─┐┌─┐
-#  └┐┌┘├─┤├┬┘└─┐
-#   └┘ ┴ ┴┴└─└─┘
-export VISUAL='geany'
-export EDITOR='nvim'
-export TERMINAL='alacritty'
-export BROWSER='firefox'
-export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+#ZSH_THEME="random"
 
-if [ -d "$HOME/.local/bin" ] ;
-  then PATH="$HOME/.local/bin:$PATH"
-fi
+zstyle ':omz:update' mode disabled  # disable automatic updates
+plugins=(git)
 
-#  ┬  ┌─┐┌─┐┌┬┐  ┌─┐┌┐┌┌─┐┬┌┐┌┌─┐
-#  │  │ │├─┤ ││  ├┤ ││││ ┬││││├┤ 
-#  ┴─┘└─┘┴ ┴─┴┘  └─┘┘└┘└─┘┴┘└┘└─┘
-autoload -Uz compinit
+source $ZSH/oh-my-zsh.sh
 
-for dump in ~/.config/zsh/zcompdump(N.mh+24); do
-  compinit -d ~/.config/zsh/zcompdump
-done
-
-compinit -C -d ~/.config/zsh/zcompdump
+# On-demand rehash
+zshcache_time="$(date +%s%N)"
 
 autoload -Uz add-zsh-hook
-autoload -Uz vcs_info
-precmd () { vcs_info }
-_comp_options+=(globdots)
 
-zstyle ':completion:*' verbose true
-zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} 'ma=48;5;197;1'
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*:warnings' format "%B%F{red}No matches for:%f %F{magenta}%d%b"
-zstyle ':completion:*:descriptions' format '%F{yellow}[-- %d --]%f'
-zstyle ':vcs_info:*' formats ' %B%s-[%F{magenta}%f %F{yellow}%b%f]-'
-
-#  ┬ ┬┌─┐┬┌┬┐┬┌┐┌┌─┐  ┌┬┐┌─┐┌┬┐┌─┐
-#  │││├─┤│ │ │││││ ┬   │││ │ │ └─┐
-#  └┴┘┴ ┴┴ ┴ ┴┘└┘└─┘  ─┴┘└─┘ ┴ └─┘
-expand-or-complete-with-dots() {
-  echo -n "\e[31m…\e[0m"
-  zle expand-or-complete
-  zle redisplay
+rehash_precmd() {
+  if [[ -a /var/cache/zsh/pacman ]]; then
+    local paccache_time="$(date -r /var/cache/zsh/pacman +%s%N)"
+    if (( zshcache_time < paccache_time )); then
+      rehash
+      zshcache_time="$paccache_time"
+    fi
+  fi
 }
-zle -N expand-or-complete-with-dots
-bindkey "^I" expand-or-complete-with-dots
 
-#  ┬ ┬┬┌─┐┌┬┐┌─┐┬─┐┬ ┬
-#  ├─┤│└─┐ │ │ │├┬┘└┬┘
-#  ┴ ┴┴└─┘ ┴ └─┘┴└─ ┴ 
-HISTFILE=~/.config/zsh/zhistory
-HISTSIZE=5000
-SAVEHIST=5000
+add-zsh-hook -Uz precmd rehash_precmd
 
-#  ┌─┐┌─┐┬ ┬  ┌─┐┌─┐┌─┐┬    ┌─┐┌─┐┌┬┐┬┌─┐┌┐┌┌─┐
-#  ┌─┘└─┐├─┤  │  │ ││ ││    │ │├─┘ │ ││ ││││└─┐
-#  └─┘└─┘┴ ┴  └─┘└─┘└─┘┴─┘  └─┘┴   ┴ ┴└─┘┘└┘└─┘
-setopt AUTOCD              # change directory just by typing its name
-setopt PROMPT_SUBST        # enable command substitution in prompt
-setopt MENU_COMPLETE       # Automatically highlight first element of completion menu
-setopt LIST_PACKED		   # The completion menu takes less space.
-setopt AUTO_LIST           # Automatically list choices on ambiguous completion.
-setopt HIST_IGNORE_DUPS	   # Do not write events to history that are duplicates of previous events
-setopt HIST_FIND_NO_DUPS   # When searching history don't display results already cycled through twice
-setopt COMPLETE_IN_WORD    # Complete from both ends of a word.
-
-#  ┌┬┐┬ ┬┌─┐  ┌─┐┬─┐┌─┐┌┬┐┌─┐┌┬┐
-#   │ ├─┤├┤   ├─┘├┬┘│ ││││├─┘ │ 
-#   ┴ ┴ ┴└─┘  ┴  ┴└─└─┘┴ ┴┴   ┴
+# the prompt
 function dir_icon {
   if [[ "$PWD" == "$HOME" ]]; then
     echo "%B%F{black}%f%b"
@@ -82,52 +39,14 @@ function dir_icon {
 
 PS1='%B%F{blue}%f%b  %B%F{magenta}%n%f%b $(dir_icon)  %B%F{red}%~%f%b${vcs_info_msg_0_} %(?.%B%F{green}.%F{red})%f%b '
 
-#  ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
-#  ├─┘│  │ ││ ┬││││└─┐
-#  ┴  ┴─┘└─┘└─┘┴┘└┘└─┘
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-
-#  ┌─┐┬ ┬┌─┐┌┐┌┌─┐┌─┐  ┌┬┐┌─┐┬─┐┌┬┐┬┌┐┌┌─┐┬  ┌─┐  ┌┬┐┬┌┬┐┬  ┌─┐
-#  │  ├─┤├─┤││││ ┬├┤    │ ├┤ ├┬┘│││││││├─┤│  └─┐   │ │ │ │  ├┤ 
-#  └─┘┴ ┴┴ ┴┘└┘└─┘└─┘   ┴ └─┘┴└─┴ ┴┴┘└┘┴ ┴┴─┘└─┘   ┴ ┴ ┴ ┴─┘└─┘
-function xterm_title_precmd () {
-	print -Pn -- '\e]2;%n@%m %~\a'
-	[[ "$TERM" == 'screen'* ]] && print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-}\e\\'
-}
-
-function xterm_title_preexec () {
-	print -Pn -- '\e]2;%n@%m %~ %# ' && print -n -- "${(q)1}\a"
-	[[ "$TERM" == 'screen'* ]] && { print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-} %# ' && print -n -- "${(q)1}\e\\"; }
-}
-
-if [[ "$TERM" == (kitty*|alacritty*|termite*|gnome*|konsole*|kterm*|putty*|rxvt*|screen*|tmux*|xterm*) ]]; then
-	add-zsh-hook -Uz precmd xterm_title_precmd
-	add-zsh-hook -Uz preexec xterm_title_preexec
-fi
-
-#  ┌─┐┬  ┬┌─┐┌─┐
-#  ├─┤│  │├─┤└─┐
-#  ┴ ┴┴─┘┴┴ ┴└─┘
-alias mirrors="sudo reflector --verbose --latest 5 --country 'United States' --age 6 --sort rate --save /etc/pacman.d/mirrorlist"
-
-alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias mantenimiento="yay -Sc && sudo pacman -Scc"
-alias purga="sudo pacman -Rns $(pacman -Qtdq) ; sudo fstrim -av"
-alias update="paru -Syu --nocombinedupgrade"
-
-alias vm-on="sudo systemctl start libvirtd.service"
-alias vm-off="sudo systemctl stop libvirtd.service"
 
 # config
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias config="nvim ~/.config/"
 alias nvimconfig="nvim ~/.config/nvim/"
+alias weztermconfig="nvim ~/.wezterm.lua"
 
 # ls
 alias ls='lsd -a --group-directories-first'
@@ -150,18 +69,76 @@ alias gc='git commit -m'
 alias gp='git push origin master'
 #other
 alias vim=nvim
-alias npm=pnpm
-#trash
-alias rm='trash-put'
-alias tre='trash-empty'
-alias trl='trash-list'
-alias trr='trash-restore'
-alias trm='trash-rm'
+alias mvnrun="mvn spring-boot:run"
 
-# rm() {
-#     command rm -i "$@"
-# }
+# functions 
 
+switchGraphic ()
+{
+     if [[ $# -eq 0 ]]; then
+        echo "Usage: switchGraphic < nvidia | integrated | hybrid >"
+        return 1
+    fi
+      prime-offload && optimus-manager --switch "$1"
+  
+}
+
+function setdpi() {
+    if [[ $# -eq 0 ]]; then
+        echo "Usage: set_dpi <dpi_value>"
+        return 1
+    fi
+    #xdpyinfo | grep resolution
+    #new_dpi = current_dpi * scaling_factor
+    #new_dpi = 96 * 1.25 = 120
+    local dpi_value="$1"
+    local xresources_file="/home/$USER/.Xresources"
+    touch $xresources_file > /dev/null
+    # Check if Xft.dpi already exists in the file
+    if grep -q "Xft.dpi" "$xresources_file"; then
+        # If it exists, update its value
+        sudo sed -i "s/Xft.dpi:.*/Xft.dpi: ${dpi_value}/" "$xresources_file"
+    else
+        # If it doesn't exist, add it to the end of the file
+        echo "Xft.dpi: ${dpi_value}" > "$xresources_file" 
+    fi
+
+    # Apply the changes using xrdb with sudo
+    sudo xrdb -merge "$xresources_file"
+
+    echo "DPI set to ${dpi_value}"
+}
+
+function fix_noto_arabic_fonts() {
+  #a Here document (Heredoc) is a type of redirection
+  #that allows you to pass multiple lines of input to a command.
+  #The syntax of writing HereDoc takes the following form:
+  #[COMMAND] <<[-] 'DELIMITER'
+    # HERE-DOCUMENT
+  #DELIMITER
+
+  # The content to add to the file
+  local content=$(cat <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
+<fontconfig>
+  <selectfont>
+    <rejectfont>
+      <glob>/usr/share/fonts/noto/NotoNastaliq*</glob>
+    </rejectfont>
+  </selectfont>
+</fontconfig>
+EOF
+)
+
+    local custom_message="Arabic legibility fixed "
+
+    local target_file="/etc/fonts/conf.d/66-noto-reject-nastaliq.conf"
+
+    sudo echo '$content' > '$target_file'
+
+    echo "$custom_message"
+}
 search() {
   if [ -z "$1" ]; then
     echo "Usage: findfile <name>"
@@ -192,14 +169,15 @@ backupdotfiles() {
     echo "Usage: backup_dotfiles <commit_message>"
   else
    CURR_DIR=$(pwd) 
-   DIR=~/dotfiles
+   DIR=~/hyprland_dotfiles
    # Create the directory if it doesn't exist
    mkdir -p $DIR
 
      # Copy .wezterm.lua
    cp ~/.wezterm.lua $DIR
      # Copy .config  
-   cp -r ~/.config $DIR
+   cd ~/.config
+   cp -r nvim mpv hypr Thunar $DIR
 
     # Copy .zshrc 
    cp ~/.zshrc $DIR
@@ -209,7 +187,10 @@ backupdotfiles() {
 
     # git
    cd $DIR 
-   git add . && git commit -m "$1" && git push origin main
+   git add . && git commit -m "$1" && git push origin main 
    cd $CURR_DIR
  fi
 }
+
+export PATH="$HOME/go/bin:$PATH"
+export _JAVA_AWT_WM_NONREPARENTING=1

@@ -3,11 +3,11 @@ local wezterm = require("wezterm")
 local config = {}
 config.color_scheme = "tokyonight_night"
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 13.5
-config.line_height = 1
+config.font_size = 14
+config.line_height = 1.2
 config.colors = {
 	background = "#11121D",
-	--	foreground = "#FDFDFD",
+	foreground = "#FDFDFD",
 }
 
 config.scrollback_lines = 3000
@@ -19,8 +19,8 @@ config.inactive_pane_hsb = {
 }
 
 config.window_padding = {
-	left = 10,
-	right = 10,
+	left = 0,
+	right = 0,
 	top = 0,
 	bottom = 0,
 }
@@ -32,9 +32,6 @@ config.hide_tab_bar_if_only_one_tab = true
 config.enable_tab_bar = true
 config.disable_default_key_bindings = true
 config.cursor_blink_rate = 80
-
-config.underline_thickness = 3
-config.underline_position = -4
 
 config.mouse_bindings = {
 	-- Ctrl-click will open the link under the mouse cursor
@@ -50,13 +47,19 @@ config.keys = {
 
 	{ key = "t", mods = "ALT", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
 
-	{ key = "c", mods = "ALT", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
+	{ key = "q", mods = "ALT", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
 	{ key = "v", mods = "ALT", action = wezterm.action.ActivateCopyMode },
 
 	{ key = "LeftArrow", mods = "ALT", action = wezterm.action.ActivateTabRelative(-1) },
 	{ key = "RightArrow", mods = "ALT", action = wezterm.action.ActivateTabRelative(1) },
 	{ key = "V", mods = "CTRL", action = wezterm.action.PasteFrom("Clipboard") },
 	{ key = "C", mods = "CTRL", action = wezterm.action.CopyTo("ClipboardAndPrimarySelection") },
+	-- use hjkl instead of arrow keys for history and modify command input
+
+	{ key = "h", mods = "ALT", action = act.SendKey({ key = "LeftArrow" }) },
+	{ key = "j", mods = "ALT", action = act.SendKey({ key = "DownArrow" }) },
+	{ key = "k", mods = "ALT", action = act.SendKey({ key = "UpArrow" }) },
+	{ key = "l", mods = "ALT", action = act.SendKey({ key = "RightArrow" }) },
 }
 
 return config
