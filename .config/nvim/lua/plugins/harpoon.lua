@@ -31,15 +31,15 @@ return {
     local mark = require(plugin .. ".mark")
     local ui = require(plugin .. ".ui")
     -- Harpoon next and previous.
-    vim.keymap.set("n", "<C-S-Left>", function()
+    vim.keymap.set("n", "<C-S-h>", function()
       ui.nav_prev()
     end)
-    vim.keymap.set("n", "<C-S-Right>", function()
+    vim.keymap.set("n", "<C-S-l>", function()
       ui.nav_next()
     end)
 
     -- Harpoon user interface.
-    vim.keymap.set("n", "<C-S-Up>", ui.toggle_quick_menu)
-    vim.keymap.set("n", "<C-S-Down>", mark.add_file)
+    vim.keymap.set("n", "<C-S-k>", ui.toggle_quick_menu)
+    vim.keymap.set("n", "<C-S-j>", mark.add_file)
   end,
 }

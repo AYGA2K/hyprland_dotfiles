@@ -177,7 +177,7 @@ backupdotfiles() {
    cp ~/.wezterm.lua $DIR
      # Copy .config  
    cd ~/.config
-   cp -r nvim mpv hypr Thunar $DIR
+   cp -r nvim mpv hypr Thunar archlinux-logout  $DIR/.config
 
     # Copy .zshrc 
    cp ~/.zshrc $DIR

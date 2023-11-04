@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-CONFIG="$HOME/.config/hypr/mako/config"
-
-if [[ ! $(pidof mako) ]]; then
-	killall mako
-	mako --config ${CONFIG}
-fi

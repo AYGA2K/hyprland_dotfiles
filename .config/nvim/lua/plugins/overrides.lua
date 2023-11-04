@@ -5,15 +5,16 @@ return {
       filesystem = {
         filtered_items = {
           visible = true,
-          hide_dotfiles = true,
+          hide_dotfiles = false,
           hide_gitignored = true,
         },
         window = {
-          width = 30,
+          width = 33,
         },
       },
     },
   },
+  { "akinsho/bufferline.nvim", enabled = false },
   {
     "rcarriga/nvim-notify",
     enabled = false,

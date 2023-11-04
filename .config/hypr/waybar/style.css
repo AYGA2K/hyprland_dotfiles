@@ -19,7 +19,7 @@
     border: none;
     border-radius: 6px;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "Fantasque Sans Mono SemiBold", "JetBrainsMono Nerd Font", "fontawesome", "Font Awesome 5 Free";
+    font-family: "Fantasque Sans Mono Bold", "JetBrainsMono Nerd Font Bold", "fontawesome", "Font Awesome 5 Free";
     /* Recommended font sizes: 720p: ~14px, 1080p: ~18px */
     font-weight: bold;
     font-size: 12px;
@@ -58,7 +58,7 @@ tooltip label{
 #workspaces button {
     padding: 0 0 0 0;
     margin: 0 0 0 0;
-    background-color: transparent;
+    background-color: rgba(0, 0, 10, 0.2);
     color: #ffffff;
     /*min-width: 36px;*/
     /* Use box-shadow instead of border so the text isn't offset */

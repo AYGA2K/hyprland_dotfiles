@@ -1,17 +1,45 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    lazy = true,
     opts = {
       servers = {
-        eslint = {},
-        ltex = {
-          cmd = { "ltex-ls" },
-          filetypes = { "markdown", "text", "tex" },
-          flags = { debounce_text_changes = 300 },
+        eslint = {
+          filetypes_include = { "templ" },
         },
+        html = {
+          filetypes_include = { "templ" },
+        },
+        javascript = {
+          filetypes_include = { "templ" },
+        },
+        cssls = {
+          filetypes_include = { "templ" },
+        },
+        htmx = {
+          filetypes_include = { "templ", "html" },
+          init_options = {
+            userLanguages = {
+              templ = "html",
+            },
+          },
+        },
+        tailwindcss = {
+          -- exclude a filetype from the default_config
+          filetypes_exclude = { "markdown" },
+          -- add additional filetypes to the default_config
+          filetypes_include = { "templ" },
+          -- to fully override the default_config, change the below
+          -- filetypes = {}
+          init_options = {
+            userLanguages = {
+              templ = "html",
+            },
+          },
+        },
+        templ = {},
       },
       setup = {
-
         eslint = function()
           require("lazyvim.util").on_attach(function(client)
             if client.name == "eslint" then
@@ -21,20 +49,6 @@ return {
             end
           end)
         end,
-      },
-      filetypes = {
-        "css",
-        "eruby",
-        "html",
-        "javascript",
-        "javascriptreact",
-        "less",
-        "sass",
-        "scss",
-        "svelte",
-        "pug",
-        "typescriptreact",
-        "vue",
       },
       init_options = {
         --- @type table<string, any> https://docs.emmet.io/customization/preferences/
