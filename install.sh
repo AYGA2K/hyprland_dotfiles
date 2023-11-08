@@ -3,7 +3,7 @@
 install_packages() {
 	echo "Installing packages..."
 	while read -r package; do
-		if yay -Q $package &>>/dev/null; then
+		if yay -Qs $package &>>/dev/null; then
 			echo -e "$package is already installed."
 		else
 			yay -S --noconfirm "$package"
@@ -23,7 +23,8 @@ copy_wezterm() {
 
 copy_config_files() {
 	echo "Copying configuration files to .config..."
-	cp .config ~/
+	cd .config
+	cp -r hypr nvim mpv Thunar ~/.config/
 }
 
 # Main script

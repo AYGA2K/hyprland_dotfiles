@@ -70,7 +70,7 @@ alias gp='git push origin master'
 #other
 alias vim=nvim
 alias mvnrun="mvn spring-boot:run"
-
+alias sail=./vendor/bin/sail
 # functions 
 
 switchGraphic ()
@@ -194,3 +194,7 @@ backupdotfiles() {
 
 export PATH="$HOME/go/bin:$PATH"
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#wallpaper fetcher and wallpaper rotator
-#type "var" in a terminal to change settings - example
-#variety &
-
 SCRIPTSDIR=$HOME/.config/hypr/scripts
 
 # Kill already running process
@@ -25,7 +21,15 @@ ${SCRIPTSDIR}/statusbar &
 
 # Xauthority
 ${SCRIPTSDIR}/xauthority &
-
+# Swayidle
+DIR=$HOME/.config/hypr/bg
+PICS=($(ls ${DIR}))
+RANDOMPICS=${PICS[$RANDOM % ${#PICS[@]}]}
+swayidle -w \
+	timeout 300 'swaylock -f -c 000000' \
+	timeout 360 'hyprctl dispatch dpms off' \
+	resume 'hyprctl dispatch dpms on' \
+	before-sleep "swaylock --clock -f --indicator --effect-blur 7x5 -i '$RANDOMPIC'" &
 #insync start &
 #dropbox &
 #telegram-desktop &
