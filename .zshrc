@@ -143,7 +143,7 @@ search() {
   if [ -z "$1" ]; then
     echo "Usage: findfile <name>"
   else
-    find / -name "$1" 2>/dev/null
+  sudo find / -name "$1" 2>/dev/null
   fi
 }
 

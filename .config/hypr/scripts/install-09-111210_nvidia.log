@@ -1,0 +1,44 @@
+[32m[OK](B[m hyprland-nvidia-git is already installed. Skipping...
+[32m[OK](B[m linux-headers is already installed. Skipping...
+[32m[OK](B[m nvidia-dkms is already installed. Skipping...
+[32m[OK](B[m nvidia-settings is already installed. Skipping...
+[32m[OK](B[m nvidia-utils is already installed. Skipping...
+[32m[OK](B[m libva is already installed. Skipping...
+[32m[OK](B[m libva-nvidia-driver-git is already installed. Skipping...
+Nvidia modules already included in /etc/mkinitcpio.conf
+==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'default'
+==> Using configuration file: '/etc/mkinitcpio.conf'
+  -> -k /boot/vmlinuz-linux -c /etc/mkinitcpio.conf -g /boot/initramfs-linux.img
+==> Starting build: '6.5.9-arch2-1'
+  -> Running build hook: [base]
+  -> Running build hook: [udev]
+  -> Running build hook: [autodetect]
+  -> Running build hook: [modconf]
+  -> Running build hook: [block]
+  -> Running build hook: [keyboard]
+  -> Running build hook: [keymap]
+  -> Running build hook: [consolefont]
+  -> Running build hook: [plymouth]
+  -> Running build hook: [filesystems]
+  -> Running build hook: [fsck]
+==> Generating module dependencies
+==> Creating zstd-compressed initcpio image: '/boot/initramfs-linux.img'
+==> Image generation successful
+==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'fallback'
+==> Using configuration file: '/etc/mkinitcpio.conf'
+  -> -k /boot/vmlinuz-linux -c /etc/mkinitcpio.conf -g /boot/initramfs-linux-fallback.img -S autodetect
+==> Starting build: '6.5.9-arch2-1'
+  -> Running build hook: [base]
+  -> Running build hook: [udev]
+  -> Running build hook: [modconf]
+  -> Running build hook: [block]
+  -> Running build hook: [keyboard]
+  -> Running build hook: [keymap]
+  -> Running build hook: [consolefont]
+  -> Running build hook: [plymouth]
+  -> Running build hook: [filesystems]
+  -> Running build hook: [fsck]
+==> Generating module dependencies
+==> Creating zstd-compressed initcpio image: '/boot/initramfs-linux-fallback.img'
+==> Image generation successful
+options nvidia-drm modeset=1

@@ -132,9 +132,6 @@ discord
 dmidecode
 dmraid
 dnsmasq
-docker
-docker-compose
-docker-desktop
 dosfstools
 downgrade
 duf
@@ -154,7 +151,6 @@ fd
 ffmpeg
 ffmpegthumbnailer
 file-roller
-firefox
 flex
 foomatic-db
 foomatic-db-engine
@@ -394,6 +390,7 @@ spotify
 spotify-adblock-git
 spring-boot-cli
 squashfs-tools
+stremio
 sudo
 surfn-icons-git
 swaybg
