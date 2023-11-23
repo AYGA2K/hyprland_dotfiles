@@ -14,6 +14,7 @@ install_packages() {
 copy_zshrc() {
 	echo "Copying .zshrc to home directory..."
 	cp .zshrc ~/
+	cp .zsh ~
 }
 
 copy_wezterm() {
