@@ -4,8 +4,7 @@ iDIR="$HOME/.config/hypr/mako/icons"
 
 # Get brightness
 get_backlight() {
-	LIGHT=$(printf "%.0f\n" $(light))
-	echo "${LIGHT}%"
+	BRIGHTNESS=$(brightnessctl --device=intel_backlight --get)
 }
 
 # Get icons
@@ -32,12 +31,12 @@ notify_user() {
 
 # Increase brightness
 inc_backlight() {
-	light -A 5 && get_icon && notify_user
+	brightnessctl --device=intel_backlight set +5% && get_icon && notify_user
 }
 
 # Decrease brightness
 dec_backlight() {
-	light -U 5 && get_icon && notify_user
+	brightnessctl --device=intel_backlight set 5%- && get_icon && notify_user
 }
 
 # Execute accordingly
