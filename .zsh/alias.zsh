@@ -16,7 +16,7 @@ alias cdconfig='cd ~/.config/'
 alias cdisk='cd /run/media/ayga/Disk/'
 
 # mount
-alias mountdisk='udisksctl mount -b /dev/sda1 -t ntfs'
+alias mountdisk='sudo mkdir -p /run/media/ayga/Disk/ && sudo mount /dev/sda1 /run/media/ayga/Disk/ -t ntfs'
 
 # git
 alias gcl='git clone --depth 1'

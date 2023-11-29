@@ -10,6 +10,7 @@ alsa-firmware
 alsa-lib
 alsa-plugins
 alsa-utils
+android-studio
 appstream
 arandr
 arc-gtk-theme
@@ -174,6 +175,7 @@ libgsf
 libmtp
 libopenraw
 libpwquality
+libreoffice-fresh
 libusb-compat
 libva-nvidia-driver-git
 linux
@@ -234,6 +236,7 @@ numlockx
 nvidia-dkms
 nvidia-settings
 nvme-cli
+obsidian
 oh-my-zsh-git
 open-iscsi
 openconnect
@@ -289,6 +292,7 @@ sof-firmware
 spotify
 spotify-adblock-git
 spring-boot-cli
+sqlitebrowser
 squashfs-tools
 stremio
 sudo
@@ -318,9 +322,11 @@ ttf-roboto-mono
 ttf-ubuntu-font-family
 tty-clock
 tumbler
+uair
 udftools
 udiskie
 udisks2
+ufw
 unace
 unrar
 unzip
@@ -337,7 +343,6 @@ vim
 vpnc
 w3m
 waybar-hyprland-git
-waydroid
 wd719x-firmware
 webcord-bin
 webkit2gtk
@@ -355,6 +360,7 @@ wvdial
 xapp
 xdg-desktop-portal-hyprland
 xdg-user-dirs
+xdman-beta-bin
 xf86-input-elographics
 xf86-input-libinput
 xfce4-appfinder
@@ -402,6 +408,10 @@ xorg-xwininfo
 xorg-xwud
 yad
 yay-bin
+zaread-git
+zathura
+zathura-cb
+zathura-pdf-mupdf
 zsh
 zsh-completions
 zsh-syntax-highlighting
