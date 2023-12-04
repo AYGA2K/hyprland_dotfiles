@@ -42,3 +42,6 @@ if Util.has("bufferline.nvim") then
   --   map("n", "<C-S-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
   --   map("n", "<C-S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 end
+
+-- zen mode
+map("n", "<leader>z", "<cmd>ZenMode<cr>", { desc = "Zen Mode" })

@@ -5,12 +5,12 @@ show=drun
 prompt=Apps
 normal_window=true
 layer=top
-term=kitty
-columns=1
+term=wezterm
+columns=2
 
 ## Geometry
-width=30%
-height=30%
+width=50%
+height=50%
 location=0
 orientation=vertical
 halign=fill

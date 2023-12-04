@@ -316,7 +316,6 @@ sof-firmware
 spotify
 spotify-adblock-git
 spring-boot-cli
-sqlitebrowser
 squashfs-tools
 stremio
 sudo
