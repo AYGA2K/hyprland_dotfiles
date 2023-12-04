@@ -5,7 +5,7 @@ adobe-source-han-sans-jp-fonts
 adobe-source-han-sans-kr-fonts
 adobe-source-sans-fonts
 aic94xx-firmware
-alacritty
+air
 alsa-firmware
 alsa-lib
 alsa-plugins
@@ -18,7 +18,22 @@ arch-install-scripts
 archlinux-logout-git
 archlinux-tweak-tool-git
 arcolinux-alacritty-git
+arcolinux-arc-aqua-git
+arcolinux-arc-archlinux-blue-git
+arcolinux-arc-arcolinux-blue-git
+arcolinux-arc-azul-git
+arcolinux-arc-azure-dodger-blue-git
+arcolinux-arc-blue-sky-git
+arcolinux-arc-botticelli-git
+arcolinux-arc-carolina-blue-git
+arcolinux-arc-havelock-git
 arcolinux-arc-kde
+arcolinux-arc-medium-blue-git
+arcolinux-arc-nice-blue-git
+arcolinux-arc-polo-git
+arcolinux-arc-sky-blue-git
+arcolinux-arc-soft-blue-git
+arcolinux-arc-tory-git
 arcolinux-bin-git
 arcolinux-config-all-desktops-git
 arcolinux-conky-collection-git
@@ -80,6 +95,7 @@ cava
 cliphist
 clipman
 clonezilla
+composer
 conky-lua-archers
 cryptsetup
 cuda
@@ -122,6 +138,7 @@ git
 gksu
 gnome-disk-utility
 gnome-keyring
+gnome-themes-extra
 gnu-netcat
 go
 gpart
@@ -137,6 +154,7 @@ gst-plugins-base
 gst-plugins-good
 gst-plugins-ugly
 gstreamer
+gtk-engine-murrine
 gutenprint
 gvfs
 gvfs-afc
@@ -163,7 +181,6 @@ jdk-openjdk
 jfsutils
 jq
 jsoncpp
-kitty
 kvantum
 laptop-detect
 lazygit
@@ -201,6 +218,7 @@ mdadm
 memtest86+
 memtest86+-efi
 mesa
+metasploit
 micro
 mintstick-git
 mkinitcpio
@@ -243,6 +261,7 @@ openconnect
 openresolv
 openssh
 openvpn
+orchis-theme-git
 os-prober
 p7zip
 pamixer
@@ -265,8 +284,13 @@ pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
 pv
+python-flask
+python-mahotas
+python-mysql-connector
+python-opencv
 python-pyparted
 python-pywal
+python-scikit-learn
 qbittorrent
 qt5-wayland
 qt5ct
@@ -302,6 +326,7 @@ swaylock-effects-git
 syslinux
 system-config-printer
 tcpdump
+tela-circle-icon-theme-git
 terminus-font
 testdisk
 the_silver_searcher
@@ -340,6 +365,9 @@ usbmuxd
 usbutils
 variety
 vim
+virtualbox
+virtualbox-guest-iso
+virtualbox-host-modules-arch
 vpnc
 w3m
 waybar-hyprland-git
@@ -363,8 +391,6 @@ xdg-user-dirs
 xdman-beta-bin
 xf86-input-elographics
 xf86-input-libinput
-xfce4-appfinder
-xfce4-terminal
 xfsprogs
 xkeyboard-config
 xl2tpd

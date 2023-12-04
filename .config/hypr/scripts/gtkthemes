@@ -2,8 +2,8 @@
 
 ## Set GTK Themes, Icons, Cursor and Fonts
 
-THEME='Catppuccin-Macchiato'
-ICONS='Surfin-Arch-Blue'
+THEME='Orchis-Red-Compact'
+ICONS='Tela-circle-dark'
 FONT='Noto Sans 11'
 CURSOR='Bibata-Modern-Ice'
 

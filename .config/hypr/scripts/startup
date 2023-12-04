@@ -22,16 +22,8 @@ ${SCRIPTSDIR}/statusbar &
 # Xauthority
 ${SCRIPTSDIR}/xauthority &
 # Swayidle
-DIR=$HOME/.config/hypr/bg
-PICS=($(ls ${DIR}))
-RANDOMPICS=${PICS[$RANDOM % ${#PICS[@]}]}
 swayidle -w \
-	timeout 300 "swaylock --clock -f --indicator --effect-blur 7x5 -i '$RANDOMPIC'" \
-	timeout 360 'hyprctl dispatch dpms off' \
+	timeout 180 'hyprctl dispatch dpms off' \
 	resume 'hyprctl dispatch dpms on' \
-	before-sleep "swaylock --clock -f --indicator --effect-blur 7x5 -i '$RANDOMPIC'" &
-#insync start &
-#dropbox &
-#telegram-desktop &
-#discord &
-#nm-applet --indicator
+	timeout 200 "swaylock --clock -f --indicator --effect-blur 7x5 -i ~/.config/hypr/bg/wallhaven-k75yem.jpg " \
+	before-sleep "swaylock --clock -f --indicator --effect-blur 7x5 -i ~/.config/hypr/bg/wallhaven-k75yem.jpg " &

@@ -5,4 +5,8 @@ PICS=($(ls ${DIR}))
 
 RANDOMPICS=${PICS[$RANDOM % ${#PICS[@]}]}
 
-swaylock --clock --indicator --effect-blur 7x5 -i ${DIR}/${RANDOMPICS}
+swaylock --ignore-empty-password \
+	--show-failed-attempts \
+	--hide-keyboard-layout \
+	--indicator-caps-lock \
+	--clock --indicator --effect-blur 7x5 -i ${DIR}/${RANDOMPICS}

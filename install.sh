@@ -14,7 +14,7 @@ install_packages() {
 copy_zshrc() {
 	echo "Copying .zshrc to home directory..."
 	cp .zshrc ~/
-	cp .zsh ~
+	cp .zsh ~/
 }
 
 copy_wezterm() {
@@ -25,13 +25,12 @@ copy_wezterm() {
 copy_config_files() {
 	echo "Copying configuration files to .config..."
 	cd .config
-	cp -r hypr nvim mpv Thunar ~/.config/
+	cp -r zathura hypr nvim mpv Thunar ~/.config/
+	cd ..
 }
 
 # Main script
 main() {
-
-	cd "$(dirname "$0")"
 
 	install_packages
 
