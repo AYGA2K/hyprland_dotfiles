@@ -1,5 +1,5 @@
 # config
-alias zshconfig="nvim ~/.zshrc"
+alias zshconfig="nvim ~/.zsh"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias config="nvim ~/.config/"
 alias nvimconfig="nvim ~/.config/nvim/"
@@ -27,4 +27,3 @@ alias gp='git push origin master'
 #other
 alias vim=nvim
 alias mvnrun="mvn spring-boot:run"
-alias sail=./vendor/bin/sail

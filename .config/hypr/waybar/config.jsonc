@@ -16,20 +16,17 @@
     "cpu",
     "memory",
     "disk",
-    "temperature",
+    "temperature"
   ],
-  "modules-center": [
-    "custom/weather",
-    "clock#3",
-  ],
+  "modules-center": ["custom/weather", "clock#3"],
   "modules-right": [
     "tray",
-    "custom/updater",
+    // "custom/updater",
     "network",
     "battery",
-    "custom/profile",
+    // "custom/profile",
     "backlight",
     "pulseaudio",
-    "pulseaudio#microphone",
-  ],
+    "pulseaudio#microphone"
+  ]
 }

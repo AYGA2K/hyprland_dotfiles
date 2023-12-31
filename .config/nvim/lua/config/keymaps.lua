@@ -13,7 +13,6 @@ local function map(mode, lhs, rhs, opts)
     vim.keymap.set(mode, lhs, rhs, opts)
   end
 end
-map("n", "<C-n>", "<cmd>RunCode<cr>", { desc = "Run Code" })
 
 -- Move to window using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
@@ -25,14 +24,12 @@ map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
 map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
 map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
--- remap the g -jk keys to just jk to navigate between wrapped lines
-map("n", "j", "gj", { desc = "Move down" })
-map("n", "k", "gk", { desc = "Move up" })
---clipboard
--- map("v", "<C-c>", '"+y', { desc = "Copy to system clipboard" })
--- map("v", "<C-x>", '"+d', { desc = "Cut to system clipboard" })
+
 map("v", "D", '"_d', { desc = "Delete" })
 map("n", "DD", '"_dd', { desc = "Delete line" })
+
+map("n", "<C-d>", "<C-d>zz", { desc = "Scroll down" })
+map("n", "<C-u>", "<C-u>zz", { desc = "Scroll up" })
 
 -- buffers
 if Util.has("bufferline.nvim") then
@@ -42,6 +39,4 @@ if Util.has("bufferline.nvim") then
   --   map("n", "<C-S-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
   --   map("n", "<C-S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 end
-
--- zen mode
-map("n", "<leader>z", "<cmd>ZenMode<cr>", { desc = "Zen Mode" })
+map("n", "<A-z>", "<cmd> ZenMode <cr>", { desc = "Toggle Zen Mode" })

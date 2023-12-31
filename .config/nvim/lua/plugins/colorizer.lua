@@ -6,6 +6,7 @@ return {
     "html",
     "templ",
     "vue",
+    "jsx",
     "svelte",
   },
 }

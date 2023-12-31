@@ -4,11 +4,7 @@
     "align": 0,
     "rotate": 0,
     "format": "{icon} {percent}",
-    "format-icons": [
-      "󰃞",
-      "󰃟",
-      "󰃠"
-    ],
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
     //"format-icons": ["", ""]
     "on-click": "",
     "on-click-middle": "",
@@ -51,9 +47,7 @@
     "critical-threshold": 82,
     "format-critical": "{temperatureC}°C {icon}",
     "format": "{temperatureC}°C {icon}",
-    "format-icons": [
-      ""
-    ],
+    "format-icons": [""],
     "on-click-right": "foot --title btop sh -c 'btop'"
   },
   "custom/menu": {
@@ -151,13 +145,7 @@
     "format-full": "{icon} Full",
     //"format-good": "",
     "format-alt": "{icon} {time}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", "", "", ""],
     "format-time": "{H}h {M}min",
     "tooltip": true,
     "on-click-right": "~/.config/hypr/scripts/glassmorphismToggle"
@@ -212,12 +200,15 @@
   },
   "network": {
     "interval": 5,
-    "format-wifi": " {essid}",
-    "format-ethernet": " {ipaddr}/{cidr}",
+    // "format-wifi": " {essid}",
+    // "format-ethernet": " {ipaddr}/{cidr}",
+    // "format-wifi": "{essid}",
+    // "format-ethernet": "{ipaddr}/{cidr}",
+    "format": " {bandwidthUpBits} |  {bandwidthDownBits}",
     "format-linked": " {ifname} (No IP)",
     "format-disconnected": "睊 Disconnected",
     "format-disabled": "睊 Disabled",
-    "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
+    // "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
     "tooltip-format": " {ifname} via {gwaddr}"
   },
   "custom/cycle_wall": {
@@ -237,11 +228,7 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "default": ["", "", ""]
     },
     "scroll-step": 5.0,
     "on-click": "~/.config/hypr/scripts/volume --toggle",
@@ -267,11 +254,7 @@
     "on-click-right": "pavucontrol",
     "on-scroll-up": "~/.config/hypr/scripts/volume --inc",
     "on-scroll-down": "~/.config/hypr/scripts/volume --dec",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ]
+    "format-icons": ["", "", ""]
   },
   "tray": {
     "icon-size": 16,

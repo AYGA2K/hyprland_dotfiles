@@ -24,8 +24,7 @@ copy_wezterm() {
 
 copy_config_files() {
 	echo "Copying configuration files to .config..."
-	cd .config
-	cp -r zathura hypr nvim mpv Thunar ~/.config/
+	cp ./.config ~/
 	cd ..
 }
 

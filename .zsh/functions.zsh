@@ -1,3 +1,12 @@
+# run java file
+runJava ()
+{
+	if [ -z "$1" ]; then
+		echo "Usage: runjava <filename>"
+	else
+	javac $1.java && java $1
+	fi
+}
 search() {
   if [ -z "$1" ]; then
     echo "Usage: findfile <name>"

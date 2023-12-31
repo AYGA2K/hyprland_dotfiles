@@ -1,0 +1,59 @@
+/* Macchiato Blue */
+@define-color accent #8aadf4;
+@define-color txt #cad3f5;
+@define-color bg #24273a;
+@define-color bg2 #494d64;
+
+* {
+  font-family: "JetBrains Mono Nerd Font", monospace;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* Window */
+window {
+  margin: 0px;
+  padding: 10px;
+  background-color: @bg;
+}
+
+/* Inner Box */
+#inner-box {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  background-color: @bg;
+}
+
+/* Outer Box */
+#outer-box {
+  margin: 5px;
+  padding: 0px 0px 30px 0px;
+  border: none;
+  background-color: @bg;
+}
+
+/* Scroll */
+#scroll {
+  margin: 0px;
+  padding: 10px;
+  border: none;
+}
+
+/* Text */
+#text {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  color: @txt;
+  animation: fadeIn 0.1s ease-in-out both;
+}
+
+/* Selected Entry */
+#entry:selected {
+  background-color: @accent;
+}
+
+#entry:selected #text {
+  color: @bg;
+}

@@ -4,16 +4,17 @@
 show=drun
 prompt=Apps
 normal_window=true
-layer=top
+layer=overlay
 term=wezterm
 columns=2
 
 ## Geometry
-width=50%
+width=60%
 height=50%
 location=0
 orientation=vertical
 halign=fill
+content_halign=fill
 line_wrap=off
 dynamic_lines=false
 
@@ -38,3 +39,4 @@ filter_rate=100
 ## Keys
 key_expand=Tab
 key_exit=Escape
+

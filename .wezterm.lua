@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 local config = {}
 config.color_scheme = "tokyonight_night"
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 14
+config.font_size = 15
 config.line_height = 1.2
 config.colors = {
 	background = "#11121D",
@@ -19,8 +19,8 @@ config.inactive_pane_hsb = {
 }
 
 config.window_padding = {
-	left = 0,
-	right = 0,
+	left = 10,
+	right = 10,
 	top = 0,
 	bottom = 0,
 }
@@ -37,7 +37,6 @@ config.mouse_bindings = {
 	-- Ctrl-click will open the link under the mouse cursor
 	{ event = { Up = { streak = 1, button = "Left" } }, mods = "CTRL", action = wezterm.action.OpenLinkAtMouseCursor },
 }
-local act = wezterm.action
 config.keys = {
 	-- Switch tabs using Alt + 1, 2, 3, ...
 	{ key = "1", mods = "ALT", action = wezterm.action({ ActivateTab = 0 }) },
@@ -54,14 +53,7 @@ config.keys = {
 	{ key = "RightArrow", mods = "ALT", action = wezterm.action.ActivateTabRelative(1) },
 	{ key = "V", mods = "CTRL", action = wezterm.action.PasteFrom("Clipboard") },
 	{ key = "C", mods = "CTRL", action = wezterm.action.CopyTo("ClipboardAndPrimarySelection") },
-	-- use hjkl instead of arrow keys for history and modify command input
-
-	{ key = "h", mods = "ALT", action = act.SendKey({ key = "LeftArrow" }) },
-	{ key = "j", mods = "ALT", action = act.SendKey({ key = "DownArrow" }) },
-	{ key = "k", mods = "ALT", action = act.SendKey({ key = "UpArrow" }) },
-	{ key = "l", mods = "ALT", action = act.SendKey({ key = "RightArrow" }) },
 }
-
 wezterm.on("user-var-changed", function(window, pane, name, value)
 	local overrides = window:get_config_overrides() or {}
 	if name == "ZEN_MODE" then

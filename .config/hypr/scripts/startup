@@ -26,4 +26,4 @@ swayidle -w \
 	timeout 180 'hyprctl dispatch dpms off' \
 	resume 'hyprctl dispatch dpms on' \
 	timeout 200 "swaylock --clock -f --indicator --effect-blur 7x5 -i ~/.config/hypr/bg/wallhaven-k75yem.jpg " \
-	before-sleep "swaylock --clock -f --indicator --effect-blur 7x5 -i ~/.config/hypr/bg/wallhaven-k75yem.jpg " &
+	before-sleep "systemctl suspend" &

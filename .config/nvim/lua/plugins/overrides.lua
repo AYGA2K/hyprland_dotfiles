@@ -23,5 +23,8 @@ return {
     },
   },
   { "nvim-lualine/lualine.nvim", enabled = false },
-  { "nvim-neo-tree/neo-tree.nvim" },
+  { "folke/trouble.nvim", opts = {} },
+  { "folke/trouble.nvim", opts = {
+    position = "bottom",
+  } },
 }
